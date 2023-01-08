@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-if alpha in range(ord('a'), ord('z') + 1):
-    while (i != 'e', i != 'q'):
-        print(chr(alpha).format(), end="")
+for t in range(97, 123):
+    while (t != 101, t != 113):
+        print(chr(t).format(), end="")

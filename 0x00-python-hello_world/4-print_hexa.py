@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 i = 0
 while i < 99:
-    print("{} =0x(:x)".format(i))
+    print("{:d} =0x(:x)".format(i))
 i += 1

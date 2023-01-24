@@ -3,8 +3,9 @@
 
 
 class Rectangle:
-    """Class to build rectangle"""
+    """rectangle class, holds height and width"""
     def __init__(self, width=0, height=0):
+        """initializes the height and width of a rectangle"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         if width < 0:

@@ -60,5 +60,6 @@ class Rectangle:
             for e in range(0, self.__width):
                 display += "#"
         return(display)
+
     def __repr__(self):
         return "Rectangle({}, {})".format(self.__width, self.__height)

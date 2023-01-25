@@ -60,4 +60,3 @@ class Rectangle:
             for e in range(0, self.__width):
                 display += "#"
         return(display)
-    

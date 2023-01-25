@@ -2,7 +2,7 @@ The ``2-matrix_divided.py`` module
 ==================================
 
 Using ``matrix_divided``
------------------------
+========================
 import module:
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 

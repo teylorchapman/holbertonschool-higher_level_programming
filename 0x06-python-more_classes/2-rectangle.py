@@ -51,12 +51,12 @@ class Rectangle:
         self.__height = value
 
     def __str__(self):
-        if self.__width == 0 or self.__height == 0:
-            return ("")
+        if self.__height == 0 or self.__width == 0:
+            return("")
         display = ""
         for t in range(0, self.__height):
             if t > 0:
                 display += "\n"
             for e in range(0, self.__width):
                 display += "#"
-            return (display)
+        return(display)

@@ -16,7 +16,7 @@ def roman_to_int(roman_string):
     # Create a dictionary of Roman numerals and
     # their corresponding integer values
     romNum = {'I': 1, 'V': 5, 'X': 10, 'L': 50,
-            'C': 100, 'D': 500, 'M': 1000}
+              'C': 100, 'D': 500, 'M': 1000}
 
     # Iterate through the input string
     for x in roman_string:

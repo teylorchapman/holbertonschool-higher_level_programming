@@ -18,6 +18,14 @@ class Rectangle:
         self.__width = width
         self.__height = height
 
+    def area(self):
+        return (self.__width * self.__height)
+
+    def perimeter(self):
+        if (self.__width * self.__height) == 0:
+            return 0
+        return (self.__width + self.__height) * 2
+
     @property
     def width(self):
         return self.__width

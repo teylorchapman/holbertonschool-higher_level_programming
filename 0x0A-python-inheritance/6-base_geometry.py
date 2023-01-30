@@ -7,8 +7,7 @@ with a message"""
 class BaseGeometry:
     """makes an empty class"""
     pass
-
-
-def area(self):
-    """raises the exception"""
-    raise Exception("area() is not implemented")
+    
+    def area(self):
+        """raises the exception"""
+        raise Exception("area() is not implemented")

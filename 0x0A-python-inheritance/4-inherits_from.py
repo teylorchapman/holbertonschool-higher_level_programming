@@ -6,7 +6,7 @@ the specified class, otherwise False"""
 
 
 def inherits_from(obj, a_class):
-    """checks if obj is an instance of a class 
+    """checks if obj is an instance of a class
     or inherited from a class"""
     if type(obj) == a_class:
         return False

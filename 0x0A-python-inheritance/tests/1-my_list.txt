@@ -1,0 +1,58 @@
+=================
+Module: 1-my_list
+=================
+
+``MyList(list)`` is a class that inherits from list
+and uses public instance method: `print_sorted()`
+
+======
+Import
+======
+    >>> MyList = __import__('1-my_list').MyList
+
+=====
+Tests
+=====
+
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> my_list.print_sorted()
+    []
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(4)
+    >>> my_list.append(5)
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+    >>> my_list = MyList()
+    >>> my_list.append(420)
+    >>> my_list.append(69)
+    >>> my_list.append(1999)
+    >>> my_list.append(47)
+    >>> my_list.append(-9)
+    >>> print(my_list)
+    [420, 69, 1999, 47, -9]
+    >>> my_list.print_sorted()
+    [-9, 47, 69, 420, 1999]
+
+    >>> my_list.append(0)
+    >>> my_list.append(3000)
+    >>> my_list.append(777)
+    >>> print(my_list)
+    [420, 69, 1999, 47, -9, 0, 3000, 777]
+    >>> my_list.print_sorted()
+    [-9, 0, 47, 69, 420, 777, 1999, 3000]
+
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(best)
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    NameError: name 'best' is not defined
+    

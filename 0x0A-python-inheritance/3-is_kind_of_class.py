@@ -8,4 +8,4 @@ False"""
 def is_kind_of_class(obj, a_class):
     """Prints if the object is an instance of a class or a class
     it was inherited from"""
-    print(isinstance(obj, a_class))
+    print isinstance(obj, a_class)

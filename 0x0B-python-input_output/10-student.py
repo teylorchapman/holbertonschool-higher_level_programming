@@ -11,7 +11,7 @@ class Student:
 
     def to_json(self, attrs=None):
         if attrs is None:
-            return (vars(self))
+            return vars(self)
         newdict = {}
         for x in attrs:
             try:

@@ -6,63 +6,78 @@ and public instance method: `integer_validator`
 
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-        >>> bg = BaseGeometry()
+Try area:
+	>>> a = BaseGeo()
+	>>> a.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
 
-Testing for documentation
-    >>> len(__import__('7-base_geometry').__doc__) > 1
+Try too many arguments for area:
+	>>> a.area(1)
+	Traceback (most recent call last):
+	TypeError: area() takes 1 positional argument but 2 were given
+
+Try integer is 0:
+	>>> a.integer_validator("integer", 0)
+	Traceback (most recent call last):
+	ValueError: integer must be greater than 0
+
+Try integer is < 0:
+	>>> a.integer_validator("integer", -1)
+	Traceback (most recent call last):
+	...
+	ValueError: integer must be greater than 0
+
+Try no argument:
+	>>> a.integer_validator()
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Try 1 argument to integer_validatord:
+	>>> a.integer_validator("integer")
+	Traceback (most recent call last):
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Checking for too many arguments:
+	 >>> a.integer_validator("integer", 1, 2)
+	 Traceback (most recent call last):
+         ...
+	 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Try good case:
+	>>> a.integer_validator("integer", 98)
+	>>> a.integer_validator("width", 98)
+	>>> a.integer_validator("age", 1)
+	>>> a.integer_validator(1, 1)
+
+Checking for mod docstring:
+	>>> m = __import__("7-base_geometry").__doc__
+    >>> len(m) > 1
     True
-    >>> len(__import__('7-base_geometry').BaseGeometry.__doc__) > 1
-    True
-    >>> len(__import__('7-base_geometry').BaseGeometry.area.__doc__) > 1
-    True
-    >>> len(__import__('7-base_geometry').BaseGeometry.integer_validator.__doc__) > 1
-    True
-    >>> print(bg.__doc__)
-     Empty class, except for exception
-    <BLANKLINE>
 
-Testing for improper input
-    >>> bg.integer_validator("distance", -4)
-    Traceback (most recent call last):
-        ...
-    ValueError: distance must be greater than 0
+Checking for class docstring:
+	>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(c) > 1
+	True
 
-    >>> bg.integer_validator("length", 0)
-    Traceback (most recent call last):
-        ...
-    ValueError: length must be greater than 0
+	>>> docs = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	>>> len(docs) > 1
+	True
 
-    >>> bg.integer_validator("Float", 3.14)
-    Traceback (most recent call last):
-        ...
-    TypeError: Float must be an integer
 
-    >>> bg.integer_validator("String", "Hello")
-    Traceback (most recent call last):
-        ...
-    TypeError: String must be an integer
+Try type errors:
+	>>> a.integer_validator("string", "hello")
+	Traceback (most recent call last):
+	TypeError: string must be an integer
 
-    >>> bg.integer_validator("None", None)
-    Traceback (most recent call last):
-        ...
-    TypeError: None must be an integer
+	>>> a.integer_validator("tuple", (1, 2))
+	Traceback (most recent call last):
+	TypeError: tuple must be an integer
 
-    >>> bg.integer_validator("Empty")
-    Traceback (most recent call last):
-        ...
-    TypeError: integer_validator() missing 1 required positional argument: 'value'
+	>>> a.integer_validator("list", [1, 2, 3])
+	Traceback (most recent call last):
+	TypeError: list must be an integer
 
-    >>> bg.integer_validator()
-    Traceback (most recent call last):
-        ...
-    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
-
-    >>> bg.integer_validator("Extra", 1, 2)
-    Traceback (most recent call last):
-        ...
-    TypeError: integer_validator() takes 3 positional arguments but 4 were given
-
-Testing for valid input
->>> bg.integer_validator("Positive", 5)
-
->>> bg.integer_validator("Seven", 7)
+	>>> a.integer_validator("bool", True)
+	Traceback (most recent call last):
+	TypeError: bool must be an integer

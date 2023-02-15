@@ -1,4 +1,4 @@
 -- lists all the cities of CA
 SELECT id, name
-    FROM cities
-    WHERE state_id = (SELECT id FROM states WHERE name = 'California');
+FROM cities
+WHERE state_id = (SELECT id FROM states WHERE name = 'California');

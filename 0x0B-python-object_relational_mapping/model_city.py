@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""adds the state object 'Lousiana'"""
+"""contains class definition of a city"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import ForeignKey

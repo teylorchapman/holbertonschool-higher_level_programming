@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """link class to table in hbtn_0e_4_usa"""
-from sys import argv
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy import String, Integer, Column
+from sqlalchemy.ext.declarative import declarative_base
+Base = declarative_base()
 
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}@localhost/{}'
-                           .format(argv[1], argv[2], argv[3]),
-                           pool_pre_ping=True)
-    Base.metadate.create_all(engine)
+class State(Base):
+    """subclass of Base"""
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True)
+    name = Column(String(128), nullable=False)

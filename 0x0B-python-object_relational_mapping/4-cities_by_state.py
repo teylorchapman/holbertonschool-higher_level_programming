@@ -13,4 +13,3 @@ if __name__ == "__main__":
                 ON cities.state_id = states.id \
                 ORDER BY cities.id")
     [print(city) for city in cur.fetchall()]
-    

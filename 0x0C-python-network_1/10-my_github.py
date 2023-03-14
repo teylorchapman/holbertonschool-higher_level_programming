@@ -3,11 +3,11 @@
 and uses the GitHub API to display your ```id```"""
 import requests
 from requests.auth import HTTPBasicAuth
-from sys import argv
+import sys
 
 if __name__ == "__main__":
-    url = "https://api.github.com/user"
-    un = argv[1]
-    token = argv[2]
-    resp = requests.get(url, auth=HTTPBasicAuth(un, token)).json
-    print(resp.get('id'))
+    url = 'https://api.github.com/user'
+    un = sys.argv[1]
+    token = sys.argv[2]
+    req = requests.get(url, auth=HTTPBasicAuth(un, token)).json()
+    print(req.get('id'))

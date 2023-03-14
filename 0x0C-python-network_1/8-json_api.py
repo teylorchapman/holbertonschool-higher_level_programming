@@ -13,15 +13,14 @@ if __name__ == "__main__":
     else:
         q = sys.argv[1]
 
-    req = requests.post(url, data={'q': q})
+    resp = requests.post(url, data={"q": q})
     try:
-        dict = req.json()
-        id = dict.get('id')
-        name = dict.get('name')
-        if len(dict) == 0:
-            print("No result")
+        a_dict = resp.json()
+        id = a_dict.get('id')
+        name = a_dict.get('name')
+        if len(a_dict) == 0:
+            print('No result')
         else:
-            print("[{}] {}".format(id, name))
+            print('[{}] {}'.format(id, name))
     except Exception as e:
-        print("Not a valid JSON")
-
+        print('Not a valid JSON')

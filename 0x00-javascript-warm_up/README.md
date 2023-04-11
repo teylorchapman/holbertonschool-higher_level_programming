@@ -1,0 +1,1 @@
+This is the beginning of learning JavaScript for Holberton School Tulsa

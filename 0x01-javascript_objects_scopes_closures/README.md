@@ -1,0 +1,1 @@
+this is the objects, scopes, and closures for JavaScript 

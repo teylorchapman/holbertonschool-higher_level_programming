@@ -2,25 +2,22 @@
 const request = require('request');
 const fs = require('fs');
 
-const url = process.argv[2];
-const filePath = process.argv[3];
+if (process.argv.length < 4) {
+  console.error('we really gotta work on your argument passing...');
+} else {
+  const url = process.argv[2];
+  const filePath = process.argv[3];
 
-request(url, (error, response, body) => {
-  if (error) {
-    console.error(error);
-    return;
-  }
-
-  if (response.statusCode !== 200) {
-    console.error(`Unexpected status code: ${response.statusCode}`);
-    return;
-  }
-
-  fs.writeFile(filePath, body, 'utf-8', error => {
+  request.get(url, (error, response, body) => {
     if (error) {
-      console.error(error);
+      console.error(` :( An error occurred while making the GET request: ${error}`);
       return;
     }
-    console.log(`Successfully saved to file: ${filePath}`);
+
+    fs.writeFile(filePath, body, 'utf8', (error) => {
+      if (error) {
+        console.error(` :( An error occurred while writing to the file: ${error}`);
+      }
+    });
   });
-});
+}
